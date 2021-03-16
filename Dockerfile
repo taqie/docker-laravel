@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV WORKDIR=/var/www/html
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
-RUN apt-get update && apt-get install -y git curl cron ssh nasm make ssh build-essential software-properties-common \
+RUN apt-get update && apt-get install -y git nano htop curl cron ssh nasm make ssh build-essential software-properties-common \
     libpng-dev autoconf automake gcc g++ make libtool dpkg pkg-config nginx supervisor mysql-client
 
 RUN add-apt-repository ppa:ondrej/php && apt-get update && \
