@@ -23,6 +23,6 @@ RUN chmod +x /entrypoint.sh
 
 WORKDIR ${WORKDIR}
 
-#CMD /etc/init.d/ssh start && /etc/init.d/cron start && /etc/init.d/php8.0-fpm start && /usr/bin/supervisord -c /etc/supervisor/supervisord.conf && nginx -g "daemon off;"
+CMD /etc/init.d/ssh start && /etc/init.d/cron start && /etc/init.d/php8.0-fpm start && /usr/bin/supervisord -c /etc/supervisor/supervisord.conf && nginx -g "daemon off;"
 #CMD ["/entrypoint.sh"]
-ENTRYPOINT ["/entrypoint.sh"]
+#ENTRYPOINT ["/entrypoint.sh"]
