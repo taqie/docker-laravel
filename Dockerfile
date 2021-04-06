@@ -15,10 +15,6 @@ RUN apt-get install -y php8.0 php8.0-bcmath php8.0-bz2 php8.0-cli php8.0-common 
     php8.0-zip php8.0-xsl php8.0-zip && rm -rf /var/lib/apt/lists/* && rm -rf /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Warsaw /etc/localtime && \
     echo "clear_env=no" >> "/etc/php/8.0/fpm/pool.d/www.conf"
 
-RUN printf "\n" | pecl install swoole
-
-RUN echo "extension=swoole.so" >> /etc/php/8.0/cli/php.ini && echo "extension=swoole.so" >> /etc/php/8.0/fpm/php.ini
-
 EXPOSE 80
 
 COPY entrypoint.sh /
